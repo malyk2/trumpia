@@ -22,6 +22,19 @@ class TrumpiaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerPublish();
+    }
+
+    private function registerPublish()
+    {
+        $basePath = __DIR__.'/../';
+        $arrPublish = [
+            'config' => [
+                $basePath.'publish/config' => config_path('')
+            ]
+        ];
+        foreach ($arrPublish as $group => $path) {
+            $this->publishes($path, $group);
+        }
     }
 }
