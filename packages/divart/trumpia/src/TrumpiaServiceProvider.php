@@ -3,6 +3,7 @@
 namespace Divart\Trumpia;
 
 use Illuminate\Support\ServiceProvider;
+//use Trumpia\TrumpiaRestApi;
 
 class TrumpiaServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,19 @@ class TrumpiaServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('trumpiarestapi', function($app)
+        {
+            return new TrumpiaRestApi();
+        });
+        // $this->app->singleton('paypalpayment', function($app)
+        // {
+        //     return new PaypalPayment();
+        // });
+        // $this->app->singleton('Aimeos\Shop\Base\Aimeos', function($app) {
+        //     dd('stop');
+		// 	return new \Aimeos\Shop\Base\Aimeos($app['config']);
+		// });
+
         $this->registerPublish();
     }
 
