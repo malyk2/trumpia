@@ -3,7 +3,8 @@ namespace Divart\Trumpia\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class TrumpiaRestApi extends Facade {
+class TrumpiaRestApi extends Facade
+{
 
   /**
    * Get the registered name of the component.

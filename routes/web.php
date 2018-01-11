@@ -16,3 +16,4 @@
 // });
 
 Route::get('/', 'IndexController@first');
+Route::get('/list', 'IndexController@list');
