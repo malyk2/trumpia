@@ -23,3 +23,4 @@ Route::get('/list/item/{id?}', 'ListController@item');
 Route::get('/list/create', 'ListController@create');
 Route::get('/list/delete/{id}', 'ListController@delete');
 Route::get('/list/update/{id}', 'ListController@update');
+Route::get('/report/{id}', 'ReportController@index');

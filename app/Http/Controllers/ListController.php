@@ -7,10 +7,6 @@ use Divart\Trumpia\Facades\TrumpiaRestApi;
 
 class ListController extends Controller
 {
-    public function first()
-    {
-    }
-
     public function all()
     {
         $all = TrumpiaRestApi::list()->get();
@@ -49,8 +45,7 @@ class ListController extends Controller
 
     public function delete($id)
     {
-        $delete = TrumpiaRestApi::list()->delete('2199079');
+        $delete = TrumpiaRestApi::list()->delete($id);
         dd($delete);
     }
-
 }

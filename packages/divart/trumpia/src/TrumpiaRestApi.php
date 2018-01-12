@@ -2,10 +2,8 @@
 
 namespace Divart\Trumpia;
 
-// use \GuzzleHttp\Client;
-//use Divart\Trumpia\Common\AllCompanies;
 use Divart\Trumpia\Common\Requests\ListRequest;
-// use Divart\Trumpia\Common\Request;
+use Divart\Trumpia\Common\Requests\StatusReportRequest;
 
 class TrumpiaRestApi
 {
@@ -16,5 +14,10 @@ class TrumpiaRestApi
     public function list()
     {
         return new ListRequest();
+    }
+
+    public function statusReport()
+    {
+        return new StatusReportRequest();
     }
 }
