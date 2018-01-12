@@ -19,27 +19,15 @@ class ListController extends Controller
         dd($item);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        $data = [
-            'list_name' => 'description',
-            'display_name' => 'Display name Testlist2',
-            'frequency' => 122,
-            'description' => 'descriptionTestlist2'
-        ];
-        $create = TrumpiaRestApi::list()->create($data);
+        $create = TrumpiaRestApi::list()->create($request->all());
         dd($create);
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $data = [
-            'list_name' => 'descriptionupdated',
-            'display_name' => 'Display name Testlist2 updated',
-            'frequency' => 100,
-            'description' => 'updated'
-        ];
-        $update = TrumpiaRestApi::list()->update($id, $data);
+        $update = TrumpiaRestApi::list()->update($id, $request->all());
         dd($update);
     }
 

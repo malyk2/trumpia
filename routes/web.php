@@ -18,9 +18,12 @@
 Route::get('/', function()  {
    echo 'trumpia';
 });
-Route::get('/list/all', 'ListController@all');
-Route::get('/list/item/{id?}', 'ListController@item');
-Route::get('/list/create', 'ListController@create');
+//list routes
+Route::get('list/all', 'ListController@all');
+Route::get('list/item/{id}', 'ListController@item');
+Route::post('list/create', 'ListController@create');
+Route::post('/list/update/{id}', 'ListController@update');
 Route::get('/list/delete/{id}', 'ListController@delete');
-Route::get('/list/update/{id}', 'ListController@update');
+
+//report routes
 Route::get('/report/{id}', 'ReportController@index');
