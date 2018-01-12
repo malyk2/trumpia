@@ -15,5 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'IndexController@first');
-Route::get('/list', 'IndexController@list');
+Route::get('/', function()  {
+   echo 'trumpia';
+});
+Route::get('/list/all', 'ListController@all');
+Route::get('/list/item/{id?}', 'ListController@item');
+Route::get('/list/create', 'ListController@create');

@@ -8,7 +8,7 @@ class ListRequest extends RestRequest
 
     public function __construct()
     {
-        $this->method = 'GET';
+        // $this->method = 'GET';
         $this->uri = 'list';
         parent::__construct();
     }

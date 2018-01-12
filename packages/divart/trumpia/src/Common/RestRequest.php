@@ -40,12 +40,22 @@ class RestRequest
 
     public function get($params = null)
     {
+        $this->method = 'GET';
         if ( ! empty($params)) {
             $this->uri .= '/'.$params;
         }
         $this->initRequest();
         $response = $this->loadResponse();
         return $response;
+    }
+
+    public function create($data = [])
+    {
+        //dd($data);
+        $this->method = 'PUT';
+        $this->initRequest();
+        $response = $this->loadResponse();
+        dd($response);
     }
 
     private function initRequest()
@@ -63,7 +73,6 @@ class RestRequest
         } catch (GuzzleRequestException $e){
             return $this->returnResponse($e->getResponse());
         }
-
         return $this->returnResponse($response);
     }
 
