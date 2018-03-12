@@ -3,6 +3,7 @@
 namespace Divart\Trumpia;
 
 use Divart\Trumpia\Common\Requests\ListRequest;
+use Divart\Trumpia\Common\Requests\SubscriptionRequest;
 use Divart\Trumpia\Common\Requests\StatusReportRequest;
 
 class TrumpiaRestApi
@@ -19,5 +20,10 @@ class TrumpiaRestApi
     public function statusReport()
     {
         return new StatusReportRequest();
+    }
+
+    public function subscription()
+    {
+        return new SubscriptionRequest();
     }
 }

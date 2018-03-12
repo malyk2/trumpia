@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Divart\Trumpia\Facades\TrumpiaRestApi;
 
-class ListController extends Controller
+class SubscriptionController extends Controller
 {
     public function all()
     {
-        $all = TrumpiaRestApi::list()->get();
+        $all = TrumpiaRestApi::subscription()->get();
         dd($all);
     }
 
@@ -21,7 +21,7 @@ class ListController extends Controller
 
     public function create(Request $request)
     {
-        $create = TrumpiaRestApi::list()->create($request->all());
+        $create = TrumpiaRestApi::subscription()->create($request->all());
         dd($create);
     }
 
